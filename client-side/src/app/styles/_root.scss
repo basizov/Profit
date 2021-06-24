@@ -4,8 +4,9 @@ $black: rgb(0, 0, 0);
 $white: rgb(255, 255, 255);
 $success: rgb(14, 75, 12);
 $failure: rgb(75, 12, 12);
+$ground: rgb(24, 24, 24);
 
-$sidebar: 35rem;
+$sidebar: 30rem;
 
 :root {
   --primary: #{$primary};
@@ -14,6 +15,7 @@ $sidebar: 35rem;
   --white: #{$white};
   --success: #{$success};
   --failure: #{$failure};
+  --ground: #{$ground};
 
   --sidebar: #{$sidebar};
 }

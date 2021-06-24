@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface IProps {
-  color: string;
+  color?: string;
   className?: string;
 }
 
 const HomeSvg: React.FC<IProps> = ({
-  color,
+  color = '#fff',
   className = ''
 }) => {
   return (
