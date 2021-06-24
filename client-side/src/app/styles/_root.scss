@@ -1,0 +1,19 @@
+$primary: rgb(32, 32, 32);
+$secondary: rgb(18, 18, 18);
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$success: rgb(14, 75, 12);
+$failure: rgb(75, 12, 12);
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --black: #{$black};
+  --white: #{$white};
+  --success: #{$success};
+  --failure: #{$failure};
+}
+
+::selection {
+  color: rgb(228, 152, 152);
+}
