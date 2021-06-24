@@ -5,6 +5,8 @@ $white: rgb(255, 255, 255);
 $success: rgb(14, 75, 12);
 $failure: rgb(75, 12, 12);
 
+$sidebar: 35rem;
+
 :root {
   --primary: #{$primary};
   --secondary: #{$secondary};
@@ -12,6 +14,8 @@ $failure: rgb(75, 12, 12);
   --white: #{$white};
   --success: #{$success};
   --failure: #{$failure};
+
+  --sidebar: #{$sidebar};
 }
 
 ::selection {

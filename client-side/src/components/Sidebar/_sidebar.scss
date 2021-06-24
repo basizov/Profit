@@ -1,0 +1,53 @@
+.sidebar {
+  position: absolute;
+  width: 7rem;
+  height: 100%;
+  background-color: var(--secondary);
+  box-shadow: 1rem 1rem 1rem rgba($black, .3);
+  transition: width .5s ease;
+  cursor: pointer;
+
+  &__link {
+    font-family: inherit;
+    color: inherit;
+    text-decoration: none;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    opacity: .7;
+    transition: opacity .3s linear;
+    &:hover {
+      opacity: 1;
+    }
+    &-header, &-selected {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    margin: 0 1rem;
+    width: 3rem;
+    height: 3rem;
+    &-header {
+      width: 5rem;
+      height: 5rem;
+      margin: 0;
+    }
+  }
+
+  &__to {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    &-header {
+      letter-spacing: 1rem;
+      font-size: 2.4rem;
+    }
+  }
+
+  &:hover {
+    width: var(--sidebar);
+  }
+}
