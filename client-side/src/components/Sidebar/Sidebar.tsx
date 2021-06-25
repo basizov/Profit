@@ -6,11 +6,16 @@ import appIcon from '../assets/sidebar/AppIcon.svg';
 import FavouriteSvg from '../assets/sidebar/FavouriteSvg';
 import ChatSvg from '../assets/sidebar/ChatSvg';
 import { useState } from 'react';
+import { useStore } from '../../app/store/store';
+import { observer } from 'mobx-react-lite';
 
 const Sidebar: React.FC = () => {
+  const { commonStore: { darkTheme } } = useStore();
   const [selectedItem, setSelectedItem] = useState('home');
 
   const isSelected = (itemName: string) => itemName === selectedItem;
+
+  const iconsTheme = () => darkTheme ? '#000' : '#fff';
 
   return (
     <aside className="sidebar">
@@ -25,28 +30,28 @@ const Sidebar: React.FC = () => {
           to='/'
           onClick={() => setSelectedItem('home')}
           className={`sidebar__link ${isSelected('home') && 'sidebar__link-selected'}`}>
-          <div><HomeSvg className='sidebar__icon' /></div>
+          <div><HomeSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">Главная</div>
         </Link>
         <Link
           to='/'
           onClick={() => setSelectedItem('chat')}
           className={`sidebar__link ${isSelected('chat') && 'sidebar__link-selected'}`}>
-          <div><ChatSvg className='sidebar__icon' /></div>
+          <div><ChatSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">Чат</div>
         </Link>
         <Link
           to='/'
           onClick={() => setSelectedItem('fav')}
           className={`sidebar__link ${isSelected('fav') && 'sidebar__link-selected'}`}>
-          <div><FavouriteSvg className='sidebar__icon' /></div>
+          <div><FavouriteSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">Избранное</div>
         </Link>
         <Link
           to='/'
           onClick={() => setSelectedItem('set')}
           className={`sidebar__link ${isSelected('set') && 'sidebar__link-selected'}`}>
-          <div><SettingsSvg className='sidebar__icon' /></div>
+          <div><SettingsSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">Настройки</div>
         </Link>
       </nav>
@@ -54,4 +59,4 @@ const Sidebar: React.FC = () => {
   );
 };
 
-export default  Sidebar;
+export default  observer(Sidebar);

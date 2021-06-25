@@ -6,13 +6,13 @@
 }
 
 html {
-  position: relative;
-  min-height: 100vh;
-  min-width: 100%;
   font-size: 62.5%;
 }
 
-body {
+.app {
+  position: relative;
+  min-width: 100%;
+  min-height: 100vh;
   overflow-y: overlay;
   font-size: 1.4rem;
   color: var(--white);
@@ -20,5 +20,15 @@ body {
   scroll-behavior: smooth;
 }
 
+.dark {
+  --primary: rgb(122, 122, 122);
+  --secondary: rgb(185, 185, 185);
+  --ground: rgb(71, 71, 71);
+  color: var(--black);
+}
+
 @import '../styles/root';
 @import '../../components/Sidebar/sidebar';
+@import '../../components/Settings/settings';
+@import '../../features/Modal/modal';
+@import '../../features/Radio/radioToggle';

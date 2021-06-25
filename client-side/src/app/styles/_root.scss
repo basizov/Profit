@@ -2,22 +2,30 @@ $primary: rgb(32, 32, 32);
 $secondary: rgb(18, 18, 18);
 $black: rgb(0, 0, 0);
 $white: rgb(255, 255, 255);
+$classic: rgb(15, 62, 105);
 $success: rgb(14, 75, 12);
 $failure: rgb(75, 12, 12);
 $ground: rgb(24, 24, 24);
 
 $sidebar: 30rem;
 
+$modalZ: 10000;
+$sidebarZ: 10000;
+
 :root {
   --primary: #{$primary};
   --secondary: #{$secondary};
   --black: #{$black};
   --white: #{$white};
+  --classic: #{$classic};
   --success: #{$success};
   --failure: #{$failure};
   --ground: #{$ground};
 
   --sidebar: #{$sidebar};
+
+  --modalZ: #{$modalZ};
+  --sidebarZ: #{$sidebarZ};
 }
 
 ::selection {
