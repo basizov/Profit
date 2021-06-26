@@ -1,5 +1,41 @@
 .settings {
+  position: relative;
   padding: 1rem;
   background-color: var(--primary);
   box-shadow: 0 0 1rem rgba($black, .7);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__line {
+    margin-top: 1rem;
+    margin-left: -1rem;
+    background-color: var(--secondary);
+    height: 0.1rem;
+    width: calc(100% + 2rem);
+  }
+
+  &__item {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__subtitle {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
 }

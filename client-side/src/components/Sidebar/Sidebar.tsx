@@ -5,15 +5,19 @@ import SettingsSvg from '../assets/sidebar/SettingsSvg';
 import appIcon from '../assets/sidebar/AppIcon.svg';
 import FavouriteSvg from '../assets/sidebar/FavouriteSvg';
 import ChatSvg from '../assets/sidebar/ChatSvg';
-import { useState } from 'react';
 import { useStore } from '../../app/store/store';
 import { observer } from 'mobx-react-lite';
 
 const Sidebar: React.FC = () => {
-  const { commonStore: { darkTheme } } = useStore();
-  const [selectedItem, setSelectedItem] = useState('home');
+  const { commonStore: {
+    darkTheme,
+    setShowSettings,
+    selectedMenuItem,
+    setSelectedMenuItem,
+    setLastMenuItem
+  } } = useStore();
 
-  const isSelected = (itemName: string) => itemName === selectedItem;
+  const isSelected = (itemName: string) => itemName === selectedMenuItem;
 
   const iconsTheme = () => darkTheme ? '#000' : '#fff';
 
@@ -28,32 +32,35 @@ const Sidebar: React.FC = () => {
         </Link>
         <Link
           to='/'
-          onClick={() => setSelectedItem('home')}
+          onClick={() => setSelectedMenuItem('home')}
           className={`sidebar__link ${isSelected('home') && 'sidebar__link-selected'}`}>
           <div><HomeSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">Главная</div>
         </Link>
         <Link
           to='/'
-          onClick={() => setSelectedItem('chat')}
+          onClick={() => setSelectedMenuItem('chat')}
           className={`sidebar__link ${isSelected('chat') && 'sidebar__link-selected'}`}>
           <div><ChatSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">Чат</div>
         </Link>
         <Link
           to='/'
-          onClick={() => setSelectedItem('fav')}
+          onClick={() => setSelectedMenuItem('fav')}
           className={`sidebar__link ${isSelected('fav') && 'sidebar__link-selected'}`}>
           <div><FavouriteSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">Избранное</div>
         </Link>
-        <Link
-          to='/'
-          onClick={() => setSelectedItem('set')}
+        <div
+          onClick={() => {
+            setLastMenuItem(selectedMenuItem);
+            setSelectedMenuItem('set');
+            setShowSettings(true);
+          }}
           className={`sidebar__link ${isSelected('set') && 'sidebar__link-selected'}`}>
           <div><SettingsSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">Настройки</div>
-        </Link>
+        </div>
       </nav>
     </aside>
   );

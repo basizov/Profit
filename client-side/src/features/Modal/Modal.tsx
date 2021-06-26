@@ -1,10 +1,15 @@
 import React from 'react';
 
-const Modal: React.FC = ({
+interface IProps {
+  className?: string;
+}
+
+const Modal: React.FC<IProps> = ({
+  className = '',
   children
 }) => {
   return (
-    <section className="modal">
+    <section className={`modal ${className}`}>
       {children}
     </section>
   );

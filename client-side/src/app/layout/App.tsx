@@ -6,11 +6,11 @@ import Modal from '../../features/Modal/Modal';
 import { useStore } from '../store/store';
 
 const App: React.FC = () => {
-  const { commonStore: { darkTheme } } = useStore();
+  const { commonStore: { darkTheme, showSettings } } = useStore();
 
   return (
     <div className={`app ${darkTheme && 'dark'}`}>
-      <Modal><Settings /></Modal>
+      <Modal className={showSettings ? '' : 'modal__show'}><Settings /></Modal>
       <Sidebar />
     </div>
   );
