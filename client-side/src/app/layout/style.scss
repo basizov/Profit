@@ -10,6 +10,8 @@ html {
 }
 
 .app {
+  transition: color .3s linear,
+              background-color .3s linear;
   position: relative;
   min-width: 100%;
   min-height: 100vh;
