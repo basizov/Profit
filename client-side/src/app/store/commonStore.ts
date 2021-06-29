@@ -4,7 +4,7 @@ export default class  CommonStore {
   languageMode = 0;
   darkTheme = false;
   showSettings = false;
-  selectedMenuItem = 'home';
+  selectedMenuItem: string | null = null;
   lastMenuItem = 'none';
   
   constructor() {
@@ -16,4 +16,13 @@ export default class  CommonStore {
   setShowSettings = (value: boolean) => this.showSettings = value;
   setLastMenuItem = (value: string) => this.lastMenuItem = value;
   setSelectedMenuItem = (value: string) => this.selectedMenuItem = value;
+
+  get getSelectedMenuItem () {
+    if (!this.selectedMenuItem) {
+      const pathname = window.location.pathname.replace('/', '');
+  
+      this.selectedMenuItem = pathname === '' ? 'home' : pathname;
+    }
+    return (this.selectedMenuItem);
+  }
 }

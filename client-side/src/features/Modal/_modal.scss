@@ -10,5 +10,6 @@
   transition: opacity .3s linear;
   &__show {
     opacity: 0;
+    display: none;
   }
 }

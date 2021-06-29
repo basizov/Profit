@@ -29,8 +29,17 @@ html {
   color: var(--black);
 }
 
+.container {
+  padding: 1rem;
+  padding-left: calc(var(--sidebar) + 1rem);
+  margin: 0 auto;
+}
+
 @import '../styles/root';
 @import '../../components/Sidebar/sidebar';
 @import '../../components/Settings/settings';
+@import '../../components/Main/main';
+@import '../../components/Chat/chat';
+@import '../../components/Favourites/favourites';
 @import '../../features/Modal/modal';
 @import '../../features/Radio/radioToggle';

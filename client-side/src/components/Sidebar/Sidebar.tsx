@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
     darkTheme,
     languageMode,
     setShowSettings,
-    selectedMenuItem,
+    getSelectedMenuItem: selectedMenuItem,
     setSelectedMenuItem,
     setLastMenuItem
   } } = useStore();
@@ -43,16 +43,16 @@ const Sidebar: React.FC = () => {
           <div className="sidebar__to">{homeLanguage[languageMode]}</div>
         </Link>
         <Link
-          to='/'
+          to='/chat'
           onClick={() => setSelectedMenuItem('chat')}
           className={`sidebar__link ${isSelected('chat') && 'sidebar__link-selected'}`}>
           <div><ChatSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">{chatLanguage[languageMode]}</div>
         </Link>
         <Link
-          to='/'
-          onClick={() => setSelectedMenuItem('fav')}
-          className={`sidebar__link ${isSelected('fav') && 'sidebar__link-selected'}`}>
+          to='/favourites'
+          onClick={() => setSelectedMenuItem('favourites')}
+          className={`sidebar__link ${isSelected('favourites') && 'sidebar__link-selected'}`}>
           <div><FavouriteSvg color={iconsTheme()} className='sidebar__icon' /></div>
           <div className="sidebar__to">{favouritesLanguage[languageMode]}</div>
         </Link>
